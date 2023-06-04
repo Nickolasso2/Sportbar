@@ -1,0 +1,46 @@
+
+<div class="note note-warning mb-3">
+  <strong>{{category.title}}:</strong>{{category.description}}
+</div>
+
+
+<div class="row">
+  {% for item in category.menuposition_set.all %}
+  <div class="col-md-4">
+    <div class="card">
+      <img src="{{item.image.url}}"/>
+      <div class="card-body">
+        <h5 class="card-title" id="card-title{{item.id}}">{{item.title}}</h5>
+        <p class="card-text">{{item.description}}</p>
+        <p class="card-text">{{item.price}}</p>
+        <form action="{% url 'cart:cart_add' item.id %}" method="post" id="addToCartForm{{item.id}}">
+            {% csrf_token %}
+            {{cart_form}}
+            <input type="button" value="Add to cart" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal" data-get-product-title="card-title{{item.id}}" onclick="passInModal(event)">
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>  
+
+
+<!-- Modal window -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title modal-font
+        " id="exampleModalLabel"></h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body modal-font" id="cartMessage">You are going to add <span id="modalProductTitle"></span> to your shopping cart</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="addToCartButton2">Add to cart</button>
+        <a href="{% url 'cart:cart_detail' %}"><button type="button" class="btn btn-info">Just go to cart</button></a>
+      </div>
+    </div>
+  </div>
+</div>

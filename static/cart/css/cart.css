@@ -1,0 +1,13 @@
+.back{
+    margin-left: 20px;
+}
+
+/* modal with confirmation successfull order */
+.orderCompleted{                                                  
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.colorBlack{
+    color: black;
+}

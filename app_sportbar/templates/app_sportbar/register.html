@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+
+
+{% block title %}
+Sign up
+{% endblock title %}
+    
+
+{% block content_base %}
+<h2>Sign up form</h2>
+    {% show_form form 'Registrate' %}
+{% endblock content_base %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+
+{% block title %}
+  Log In
+{% endblock title %}
+
+{% block content_base %}
+
+<h2>Login form</h2>
+    {% show_form logging_form 'Log in' %}
+{% endblock content_base %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+
+{% block content_base %}
+<h3>Add information to complete the order</h3>
+
+{% if not request.user.is_authenticated %}
+<div class="alert alert-danger" role="alert">
+    You cannot access your order history if you are not registered. <a href="{% url 'login' %}">Log in</a>/<a href="{% url 'register' %}">Sign up</a>
+</div>
+    
+{% endif %}
+    
+{% show_form order_form 'Order' 'cart:order_received' %}
+
+
+
+
+{% endblock content_base %}
+    

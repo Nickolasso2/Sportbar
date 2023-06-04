@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+
+{% block title %}
+  Menu
+{% endblock title %}
+
+{% block content_base %}
+  
+  {% for category in object_list %}
+    {% category category cart_form %}
+  {% endfor %}
+    
+{% endblock content_base %}

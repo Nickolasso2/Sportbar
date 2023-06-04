@@ -1,0 +1,290 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #0c0b09;
+  color: #fff;
+}
+
+a {
+  color: #cda45e;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #d9ba85;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif;
+}
+
+#main{
+  padding-top: 100px;
+}
+/* ===================Navbar============== */
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: #4d4d4d;
+  position: fixed;
+  z-index: 19;
+  opacity: 0.9;
+}
+#nav-div-right{
+  flex-grow: 1;
+    text-align: end;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+@media (max-width:600px) {
+  #nav-div-right{
+    position: fixed;
+    top: 5px;
+    right: 45px;
+}
+#nav-div-right button, .text button{
+  font-size: x-small;}
+
+}
+
+@media (max-width:460px) {
+
+#nav-div-right button, .text button{
+  padding:2px;}
+
+}
+
+
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+ 
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #d9ba85;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+
+.dropdown-menu img {
+  width: 5em;
+}
+
+
+/* ===================/Navbar============== */
+/*     
+
+/* ===========Slideshow container======================= */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}    
+.text {
+  color: #e9cbc1;
+  padding: 8px 12px;
+  width: 100%;
+  text-align: center;
+ 
+
+}
+.divText {
+  position: absolute;
+  top: 5em;
+  text-align: center;
+  width: 100%;
+  font-size: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.divText div:nth-child(1) {
+ font-size: 2em;
+ animation-delay: 1s;
+
+}
+.divText div:nth-child(2) {
+ font-size: 3em;
+ animation-delay: 2s;
+}
+.divText div:nth-child(3) {
+ animation-delay: 3s;
+}
+.divText div:nth-child(4) {
+  animation-delay: 4s;
+ }
+
+ .text {
+  width:fit-content;
+  display: block;
+  position: relative;
+}
+
+.text::after {
+  content: "";
+  background: url("../img/gray.892484b7fe29.png");
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  border-radius: 30px;   
+}
+/* ==================/Slideshow container================== */
+ 
+
+/* ==================The dots indicators================== */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: rgb(250, 244, 244);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+/* ==================/The dots indicators================== */
+
+.active {
+  background-color: #87868d;
+}
+
+
+
+/**
+* ----------------------------------------
+* animation scale-up-center
+* ----------------------------------------
+*/
+.scale-up-center {
+-webkit-animation: scale-up-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+      animation: scale-up-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+@-webkit-keyframes scale-up-center {
+0% {
+-webkit-transform: scale(0);
+        transform: scale(0);
+}
+100% {
+-webkit-transform: scale(1);
+        transform: scale(1);
+}
+}
+@keyframes scale-up-center {
+0% {
+-webkit-transform: scale(0.0);
+        transform: scale(0.0);
+}
+100% {
+-webkit-transform: scale(1);
+        transform: scale(1);
+}
+}
+
+/**
+* ----------------------------------------
+* /animation scale-up-center
+* ----------------------------------------
+*/
+
+
+
+
+/* ==================registrationForm register, login, order============= */
+
+.registrationFormField{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #ffffff 2px solid;
+  border-radius: 25px;
+  background-color: #e4a11b;
+  margin: 10px;
+}
+
+/* ==================///registrationForm register, login, order============= */
+
+

@@ -1,0 +1,27 @@
+.card-body{
+    color: black;
+    background-color: antiquewhite;
+}
+
+.row{
+    grid-gap: 10px;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.note{
+    color: #8d2a2a;
+    margin: 10px;
+}
+.note strong{
+    font-size: xx-large;
+}
+
+.modal-font{
+    color: brown;
+    font-size: x-large;
+}
+#exampleModalLabel{
+    font-size: xx-large;
+}

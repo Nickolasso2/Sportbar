@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+
+{% block title %}
+  Book a table
+{% endblock title %}
+  
+
+{% block content_base %}
+<h2>Book a table</h2>
+<form action="{% url 'book_table' %}" method="post" id="bookTableForm">
+  
+
+  {% csrf_token %}
+  <div style="text-align: center;">
+
+    {% for field in form %}
+    <div class="registrationFormField">
+      <div>{{field.label_tag}}</div>
+      <div>{{field}}</div>
+      <div>{{field.help_text}}</div>
+      
+      {% for error in field.errors %}
+        {{error}}
+      {% endfor %}
+        
+    </div>
+    {% endfor %}
+
+
+    <button type="submit" class="btn btn-warning">Book a table</button>
+
+    <div>
+      {% for error in form.non_field_errors %}
+        {{error}}
+      {% endfor %}
+
+    </div>
+      
+  </div>
+</form>
+
+
+
+
+
+{% endblock content_base %}
+
+    

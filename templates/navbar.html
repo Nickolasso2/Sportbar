@@ -1,0 +1,86 @@
+<!-- ======================Navbar=========================== -->
+<div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+
+      <!-- added href to home page with another url, only for order_form.html for not to show confirmation modal window from here  -->
+      <a href="{% url 'home' %}">Home</a>
+
+    </div>
+  </div>
+  <!-- _________small width menu icon -->
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="nav-links">
+
+    <a class="btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown"
+      aria-expanded="false">
+      Menu
+    </a>
+    <!-- __________display categories -->
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      {% for category in categories %}
+      <li><a class="dropdown-item" href="{{category.get_absolute_url}}">{{category.title}} <img
+            src="{{category.image.url}}" alt=""></a></li>
+      {% endfor %}
+    </ul>
+    <!-- ___________ -->
+    <a href="">Link</a>
+
+
+  </div>
+  <div id='nav-div-right'>
+    <form action="{% url 'categories' %}">
+      <button type="submit" class="btn btn-warning">ORDER ONLINE</button>
+    </form>
+
+    {% if request_user.is_authenticated %}
+    <!-- Avatar -->
+    <div class="dropdown">
+      <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
+        role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25"
+          alt="Black and White Portrait of a Man" loading="lazy">
+      {{request_user.username}}</a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuAvatar">
+        <li>
+          <a class="dropdown-item disabled" href="#">My profile</a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="{% url 'cart:orders_list' %}">My orders</a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+        </li>
+      </ul>
+    </div>
+    {% else %}
+    <div class="d-flex align-items-center">
+      <form action="{% url 'login' %}">
+        <button type="submit" class="btn btn-primary">Log in</button>
+      </form>
+      <form action="{% url 'register' %}">
+        <button type="submit" class="btn btn-primary">Sign up</button>
+      </form>
+      {% endif %}
+      <i class="fas fa-shopping-cart fa-2x" id="emptyCart"></i>
+      <a href="{% url 'cart:cart_detail' %}" id="notEmptyCart">
+        <i class="fas fa-cart-arrow-down fa-2x" style="color: rgb(255, 35, 35);"></i>
+        <i class="fas" style="color: rgb(255, 35, 35);" id="goodsNumber"></i>
+      </a>
+
+  </div>
+</div>
+<!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+</div>
+</div>
+<!-- ======================End Navbar=========================== -->

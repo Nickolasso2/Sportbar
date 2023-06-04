@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+
+{% block title %}
+  {{object}}
+{% endblock title %}
+
+{% block content_base %}
+    {% category object cart_form %}
+{% endblock content_base %}

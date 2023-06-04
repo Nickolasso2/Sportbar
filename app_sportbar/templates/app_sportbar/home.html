@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content_base %}
+<div class="slideshow-container">
+
+  <div class="mySlides">
+    <img src={% static "app_sportbar/img/close-up-friends.avif" %} style="width:100%">
+    <div class="divText">
+      <div class="text scale-up-center"><b>Grab Your Beer</b></div>
+      <div class="text scale-up-center"><b>WATCH YOUR FAVOURITE GAME</b></div>
+      <div class="text scale-up-center"><b>Welcome to the highly-anticipated sports bar ranked first among many of the
+          most popular nighttime destinations. Enjoy the latest sporting events and drink cold beer at our bar!</b>
+      </div>
+      <a href="{% url 'book_table' %}">
+        <div class="text scale-up-center"><button type="button" class="btn btn-warning">BOOK A TABLE</button></div>
+      </a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="mySlides ">
+  <img src={% static "app_sportbar/img/fun-friends.jpg" %} style="width:100%">
+  <div class="divText">
+    <div class="text scale-up-center"><b>Enjoy The Game</b></div>
+    <div class="text scale-up-center"><b>THE BIG SCREEN EXPERIENCE</b></div>
+    <div class="text scale-up-center"><b>We have one of the biggest LED TV panels in the city and that’s why watching
+        your favorite game at The Sport Bar guarantees you will enjoy your time.</b></div>
+    <a href="{% url 'book_table' %}">
+      <div class="text scale-up-center"><button type="button" class="btn btn-warning">BOOK A TABLE</button></div>
+    </a>
+  </div>
+</div>
+<div class="mySlides">
+  <img src={% static "app_sportbar/img/happy-men.avif" %} style="width:100%">
+  <div class="divText">
+    <div class="text scale-up-center"><b>Great Place For Everyone</b></div>
+    <div class="text scale-up-center"><b>Enjoy Your Company</b></div>
+    <div class="text scale-up-center"><b>A good company is what you need to unforgettably spend your time at our bar.
+        With a wide variety of snacks and drinks, you and your friends can have the best sports bar experience.</b>
+    </div>
+    <a href="{% url 'book_table' %}">
+      <div class="text scale-up-center"><button type="button" class="btn btn-warning">BOOK A TABLE</button></div>
+    </a>
+  </div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+
+<hr>
+
+
+
+
+<script>
+  document.getElementById('main').setAttribute('style', 'padding-top:0;')
+</script>
+
+{% endblock content_base %}
