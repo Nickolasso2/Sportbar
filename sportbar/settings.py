@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
-    'django.contrib.sites',
     'app_sportbar.apps.AppSportbarConfig',
     'cart.apps.CartConfig',
     'captcha',
