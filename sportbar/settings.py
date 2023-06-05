@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'sportbar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sportbar_postgre',
-        'USER': 'nick',
-        'PASSWORD': '454',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'q9szpSpproGx0yCClo21',
+        'HOST': 'containers-us-west-167.railway.app',
+        'PORT': '6485',
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
     }
